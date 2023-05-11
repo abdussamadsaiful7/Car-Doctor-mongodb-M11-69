@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const SignUp = () => {
-
     const {createUser} = useContext(AuthContext)
+    const [error, setError]=useState([]);
 
     const handleSignUp = event =>{
         event.preventDefault();
@@ -24,6 +24,7 @@ const SignUp = () => {
         })
         .catch(error=>{
             console.log(error.message)
+            setError(error)
         })
     }
     return (
@@ -58,9 +59,9 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                {/* <button className="btn btn-primary">Login</button> */}
                                 <input type="submit" className='btn btn-primary bg-red-500' value="Sign Up" />
                             </div>
+                            {/* <p>{error}</p> */}
                         </form>
                         <p className='text-center my-4'>Already have an account? <Link to='/login' className='text-red-500 
                     font-semibold'>Sign In</Link></p>

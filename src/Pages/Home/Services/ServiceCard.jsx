@@ -1,8 +1,9 @@
 import React from 'react';
 import { HiArrowRight } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    const { title, img, price, description } = service;
+    const { _id, title, img, price, description } = service;
     //console.log(service)
     return (
         <div className="card w-84 border bg-base-100 shadow-xl">
@@ -13,7 +14,7 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <div className='flex items-center justify-between text-red-500 '>
                     <p className=' font-semibold mr-10'>Price: ${price}</p>
-                    <HiArrowRight />
+                   <Link to={`/checkOut/${_id}`}><HiArrowRight /></Link>
                 </div>
             </div>
         </div>

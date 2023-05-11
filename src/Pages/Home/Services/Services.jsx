@@ -8,7 +8,7 @@ const Services = () => {
     // console.log(services)
 
     useEffect(() => {
-        fetch('service.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
@@ -29,7 +29,7 @@ const Services = () => {
                     <button className="btn btn-outline btn-error">More Services</button>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-4 px-10 py-20 bg-black text-white rounded'>
+            <div className='grid grid-cols-3 gap-4 px-10 py-20 bg-black text-white rounded mb-10'>
                 <div className='flex items-center gap-4'>
                     <div className='relative'>
                        <span className='text-4xl'> <FaCalendarAlt/></span>
