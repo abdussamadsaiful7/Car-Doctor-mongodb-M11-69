@@ -8,22 +8,23 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-    const handleLogout =()=>{
+    const handleLogout = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=> console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
 
     const navItems = <>
         <li><Link to='/'>Home </Link></li>
-        <li><Link to='/about'> About </Link></li>
-        <li><Link to='/services'>Services </Link></li>
         {
-            user?.email ?  <li><Link onClick={handleLogout}>Log Out</Link></li> :
-             <li><Link to='/login'>Login</Link></li> 
-               
+            user?.email ? <>
+                <li><Link to='/bookings'> Bookings </Link></li>
+                <li><Link onClick={handleLogout}>Log Out</Link></li>
+            </> :
+                <li><Link to='/login'>Login</Link></li>
         }
-        <li><Link to='/contact'>Contact</Link></li>
+         <li><Link> About </Link></li>
+        
     </>
 
     return (

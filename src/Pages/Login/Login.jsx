@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import login from '../../assets/images/login/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from.pathname || '/'
 
     const {signIn} = useContext(AuthContext);
 
@@ -19,6 +22,8 @@ const Login = () => {
         .then(result=>{
             const user = result.user;
             console.log(user);
+            navigate(from,{replace: true})
+            form.reset();
         })
         .catch(error=>{
             console.log(error.message)

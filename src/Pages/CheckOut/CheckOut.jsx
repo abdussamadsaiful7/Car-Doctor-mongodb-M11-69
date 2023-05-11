@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const CheckOut = () => {
     const service = useLoaderData();
-    const { title, _id, price, img} = service;
+    const { title, _id, price, img } = service;
     const {user} = useContext(AuthContext);
 
     const handleBookService = (event)=>{
@@ -17,17 +17,17 @@ const CheckOut = () => {
         const phone = form.phone.value;
         const email = form.email.value;
         const address = form.address.value;
-        const amount = form.amount.value;
+        const payment = form.payment.value;
         const message = form.message.value;
         const booking ={
             customerName: name,
             email,
-            img,
             phone,
             date,
             address,
-            amount,
+            payment,
             message,
+            img,
             service_id: _id,
             price: price,
             service: title
@@ -45,8 +45,9 @@ const CheckOut = () => {
         .then(data=>{
             console.log(data)
             if(data.insertedId){
-                toast.success('Here is your toast.');
+                toast.success('Your booking is successful!');
             }
+            form.reset();
         })
     }
     return (
@@ -59,7 +60,7 @@ const CheckOut = () => {
                         <input type="text" name="name" defaultValue={user?.displayName} placeholder="Name" className="input input-bordered w-full" />
                     </div>
                     <div className="form-control w-full">
-                        <input type="datetime-local" name="date" placeholder="Date" className="input input-bordered w-full" />
+                        <input type="date" name="date" placeholder="Date" className="input input-bordered w-full" />
                     </div>
                 </div>
                 <div className='md:flex items-center justify-around gap-8'>
@@ -75,11 +76,12 @@ const CheckOut = () => {
                         <input type="//#region" name="address" placeholder="Address" className="input input-bordered w-full" />
                     </div>
                     <div className="form-control w-full">
-                        <input type="text" name="amount" defaultValue={'$'+ price} placeholder="Advance amount" className="input input-bordered w-full" />
+                        <input type="text" name="payment" defaultValue={'$'+ price} placeholder="Advance payment" className="input input-bordered w-full" />
                     </div>
                 </div>
                 <div>
-                    <textarea name="message" placeholder='Your message' className='border border-gray-300 rounded' id="" cols="110" rows="10"></textarea>
+                    <textarea name="message" placeholder='Your message' className='border border-gray-300 
+                    p-4 rounded' id="" cols="106" rows="8"></textarea>
                 </div>
                 
                 <div className="form-control mt-6">
