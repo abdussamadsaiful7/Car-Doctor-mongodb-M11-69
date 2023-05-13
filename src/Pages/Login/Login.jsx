@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import login from '../../assets/images/login/login.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -6,7 +6,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location?.state?.from.pathname || '/'
+    const from = location?.state?.from?.pathname || '/';
 
     const {signIn} = useContext(AuthContext);
 
@@ -30,6 +30,8 @@ const Login = () => {
         })
 
     }
+
+  
 
     return (
         <div className="hero min-h-screen bg-base-200">

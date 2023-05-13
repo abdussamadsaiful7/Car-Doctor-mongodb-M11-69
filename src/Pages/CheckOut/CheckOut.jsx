@@ -96,7 +96,7 @@ const CheckOut = () => {
                 </div>
                 <div>
                     <textarea name="message" placeholder='Your message' className='border border-gray-300 
-                    p-4 rounded' id="" cols="106" rows="8"></textarea>
+                    p-4 rounded' id="" cols="122" rows="6"></textarea>
                 </div>
 
                 <div className="form-control mt-6">

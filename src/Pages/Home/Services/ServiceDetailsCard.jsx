@@ -24,9 +24,9 @@ const ServiceDetailsCard = ({ card, setCard }) => {
             <div>
                 <h1 className='text-xl font-semibold'>Three Simple Steps to Process</h1>
                 <p className='my-4'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
-                <div className='grid md:grid-cols-3 gap-4'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>
                     <div className='border py-10 rounded-md shadow-md'>
-                        <div className="avatar lg:ml-16">
+                        <div className="avatar lg:ml-16 ml-36">
 
                             <div className="w-24 rounded-full border bg-red-500">
                                 <p className='text-center text-xl pt-8 text-white font-extrabold'>01</p>
@@ -39,7 +39,7 @@ const ServiceDetailsCard = ({ card, setCard }) => {
                         </div>
                     </div>
                     <div className='border py-10 rounded-md shadow-md'>
-                        <div className="avatar lg:ml-16">
+                        <div className="avatar lg:ml-16 ml-36">
                             <div className="w-24 rounded-full border bg-red-500">
                                 <p className='text-center text-xl pt-8 text-white font-extrabold'>02</p>
                             </div>
@@ -50,7 +50,7 @@ const ServiceDetailsCard = ({ card, setCard }) => {
                         </div>
                     </div>
                     <div className='border py-10 rounded-md shadow-md'>
-                        <div className="avatar lg:ml-16">
+                        <div className="avatar lg:ml-16 ml-36">
                             <div className="w-24 rounded-full border bg-red-500">
                                 <p className='text-center text-xl pt-8 text-white font-extrabold'>03</p>
                             </div>

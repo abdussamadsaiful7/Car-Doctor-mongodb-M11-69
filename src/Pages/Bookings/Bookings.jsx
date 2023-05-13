@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import BookingRow from './BookingRow';
-import toast, { Toaster } from 'react-hot-toast';
-import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
+
 
 const Bookings = () => {
     const { user } = useContext(AuthContext);

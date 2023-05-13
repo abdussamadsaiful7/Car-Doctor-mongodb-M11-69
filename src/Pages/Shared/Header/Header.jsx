@@ -17,14 +17,15 @@ const Header = () => {
     const navItems = <>
         <li><Link to='/'>Home </Link></li>
         {
-            user?.email ? <>
+           user && user?.email? 
+            <>
                 <li><Link to='/bookings'> Bookings </Link></li>
-                <li><Link onClick={handleLogout}>Log Out</Link></li>
-            </> :
-                <li><Link to='/login'>Login</Link></li>
+                <li><button onClick={handleLogout}>Log out</button></li>
+            </>
+                : <li><Link to='/login'>Login</Link></li>
         }
-         <li><Link> About </Link></li>
-        
+        <li><Link> About </Link></li>
+
     </>
 
     return (
