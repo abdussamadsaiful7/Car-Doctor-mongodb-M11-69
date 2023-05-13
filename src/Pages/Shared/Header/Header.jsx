@@ -10,21 +10,23 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                localStorage.removeItem('car-access-token')
+            })
             .catch(error => console.log(error))
     }
 
     const navItems = <>
         <li><Link to='/'>Home </Link></li>
+        <li><Link> About </Link></li>
         {
-           user && user?.email? 
+          user?.email? 
             <>
                 <li><Link to='/bookings'> Bookings </Link></li>
                 <li><button onClick={handleLogout}>Log out</button></li>
             </>
                 : <li><Link to='/login'>Login</Link></li>
         }
-        <li><Link> About </Link></li>
 
     </>
 

@@ -20,10 +20,3 @@ export default app;
 
 
 
-
-// VITE_apiKey= AIzaSyBol9UOW9WZYIbUKi-Nr8dRXb3kETBnTms
-// VITE_authDomain= cars-doctor-6c420.firebaseapp.com
-// VITE_projectId= cars-doctor-6c420
-// VITE_storageBucket= cars-doctor-6c420.appspot.com
-// VITE_messagingSenderId= 191367262425
-// VITE_appId= 1:191367262425:web:b4bdc2569524d63c2f8ec8
