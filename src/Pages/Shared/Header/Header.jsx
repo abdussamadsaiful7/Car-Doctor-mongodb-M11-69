@@ -10,8 +10,8 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => { 
-                localStorage.removeItem('car-access-token')
+            .then(() => {
+            
             })
             .catch(error => console.log(error))
     }
@@ -27,6 +27,7 @@ const Header = () => {
             </>
                 : <li><Link to='/login'>Login</Link></li>
         }
+        
 
     </>
 

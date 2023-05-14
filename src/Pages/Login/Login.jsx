@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import login from '../../assets/images/login/login.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -22,26 +23,9 @@ const Login = () => {
         .then(result=>{
             const user = result.user;
 
-            const loggedUser = {
-                email: user.email
-            }
-            console.log(loggedUser);
-           fetch('http://localhost:5000/jwt', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(loggedUser)
-           })
-           .then(res=>res.json())
-           .then(data=> {
-            console.log('jwt response',data);
-            //warning: local store is not  (second best place sore access to store access token)
-            localStorage.setItem('car-access-token', data.token);
+            console.log(user);
             navigate(from,{replace: true})
-
-           })
-
+        
             form.reset();
         })
         .catch(error=>{
@@ -83,6 +67,7 @@ const Login = () => {
                     </form>
                     <p className='text-center my-4'>Don't have an account? <Link to='/signUp' className='text-red-500 
                     font-semibold'>Sign Up</Link></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
