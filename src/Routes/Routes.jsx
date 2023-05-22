@@ -31,12 +31,12 @@ const router = createBrowserRouter([
         {
           path: '/serviceDetails/:id',
           element: <ServiceDetails></ServiceDetails>,
-          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=>fetch(`https://car-doctor-server-gamma-eight.vercel.app/services/${params.id}`)
         },
         {
           path: '/checkOut/:id',
           element:<PrivateRoute> <CheckOut></CheckOut></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`) 
+          loader: ({params})=>fetch(`https://car-doctor-server-gamma-eight.vercel.app/services/${params.id}`) 
         },
         {
           path: '/bookings',

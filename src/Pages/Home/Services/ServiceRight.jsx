@@ -9,7 +9,7 @@ const ServiceRight = () => {
     const { description, facility, img, title, price } = allData;
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://car-doctor-server-gamma-eight.vercel.app/services')
             .then(res => res.json())
             .then(data => setAllData(data))
     }, [])
